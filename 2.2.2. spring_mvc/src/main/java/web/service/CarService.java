@@ -1,15 +1,22 @@
 package web.service;
 
+import web.DAO.CarDAO;
+import web.DAO.CarIntDAO;
 import web.model.Car;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class CarService {
-    public static List<Car> carList(List<Car> cars,int value) {
-        if(value == 0 || value > 5) {
-            return cars;
-        }
-        return cars.stream().limit(value).collect(Collectors.toList());
+    private CarDAO carIntDAO = new CarDAO();
+
+    public List<Car> listCar() {
+        return carIntDAO.carsList();
     }
+
+
+    public List<Car> filter(List<Car> cars, int value) {
+       return carIntDAO.filterCar(cars,value);
+    }
+
 }
