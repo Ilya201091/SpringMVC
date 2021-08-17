@@ -13,12 +13,23 @@ public class Car {
         this.color = color;
     }
 
+    public String getModel() {
+        return model;
+    }
+
+    public int getPower() {
+        return power;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
     @Override
     public String toString() {
-        return "Car{" +
-                "model='" + model + '\'' +
-                ", power=" + power +
-                ", color='" + color + '\'' +
-                '}';
+        return "Car" +
+                "model '" + model + '\'' +
+                ", power " + power +
+                ", color '" + color + '\'';
     }
 }
